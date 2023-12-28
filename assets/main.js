@@ -9,7 +9,7 @@ let bitSpeed = document.getElementById("bits"),
 let totalBitSpeed = 0;
 let totalKbSpeed = 0;
 let totalMbSpeed = 0;
-let numTests = 5;
+let numTests = 10;
 let testCompleted = 0;
 
 // Get random image from unsplash.com
@@ -41,6 +41,10 @@ function calculateSpeed(){
     totalMbSpeed += speedInMbs;
 
     testCompleted++;
+
+    // info.innerHTML = `Test ${testCompleted} of ${numTests}`;
+    let testPercentage = ((testCompleted/numTests)*100).toFixed(0)
+    info.innerHTML = `Testing: ${testPercentage}%`;
 
     //If all tests are completed (we get 5 images then calculat average)
     if (testCompleted === numTests) {
